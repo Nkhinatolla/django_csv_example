@@ -80,7 +80,7 @@ REST_FRAMEWORK = {
 }
 
 ROOT_URLCONF = 'csv_example.urls'
-
+STATIC_ROOT = 'static/'
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
