@@ -111,16 +111,15 @@ WSGI_APPLICATION = 'csv_example.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-# postgres://btgbmwgpnovxqm:e82860d0e067eeb0e79eda96562f162e16578f33edc3f7d1ac9a93603d8b282b@ec2-54-74-77-126.eu-west-1.compute.amazonaws.com:5432/ddq2vsstcsvd8g
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'ddq2vsstcsvd8g',
-        'HOST': 'ec2-54-74-77-126.eu-west-1.compute.amazonaws.com',
+        'NAME': os.environ.get('DB_NAME'),
+        'HOST': os.environ.get('DB_HOST'),
         'PORT': 5432,
-        'USER': 'btgbmwgpnovxqm',
-        'PASSWORD': 'e82860d0e067eeb0e79eda96562f162e16578f33edc3f7d1ac9a93603d8b282b'
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASSWORD')
     },
 }
     # Password validation
