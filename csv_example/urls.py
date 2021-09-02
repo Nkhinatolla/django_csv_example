@@ -5,13 +5,11 @@ from django.contrib import admin
 from django.urls import path, include
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView, SpectacularRedocView
 from django.contrib.auth import views
-from django.conf.urls.static import static
-
+from rest_framework.authtoken.views import obtain_auth_token
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/login/', views.LoginView.as_view(), name='login'),
-    path('api/logout/', views.LogoutView.as_view(), name='logout'),
+    path('api-token-auth/', obtain_auth_token, name='api_token_auth'),
     url(r'^api/fakecsv/', include(('fakecsv.urls', 'fakecsv'))),
 ]
 
