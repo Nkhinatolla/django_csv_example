@@ -7,3 +7,4 @@ coverage.xml
 db.sqlite3
 media/
 .env
+.idea
