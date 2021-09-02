@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f2fc839-4782-4939-a0a5-60303736f2fc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProcFile" beforeDir="false" afterPath="$PROJECT_DIR$/ProcFile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/csv_example/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/csv_example/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +97,7 @@
       <workItem from="1629818362448" duration="6520000" />
       <workItem from="1630414292882" duration="36868000" />
       <workItem from="1630541587768" duration="528000" />
-      <workItem from="1630558751864" duration="2166000" />
+      <workItem from="1630558751864" duration="3653000" />
     </task>
     <servers />
   </component>
