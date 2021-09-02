@@ -73,6 +73,7 @@ class SchemaViewSet(viewsets.ModelViewSet):
 class DatasetViewSet(mixins.ListModelMixin, mixins.CreateModelMixin, viewsets.GenericViewSet):
     permission_classes = [IsAuthenticated]
     serializer_class = serializers.DatasetListSerializer
+    queryset = Dataset.objects.none()
 
     def get_queryset(self):
         return Dataset.objects.filter(schema_id=self.kwargs['schema_id'])
@@ -81,13 +82,5 @@ class DatasetViewSet(mixins.ListModelMixin, mixins.CreateModelMixin, viewsets.Ge
         instance = serializer.save()
         celery_app.send_task(name='example_csv.generate_task', kwargs={'dataset_id': instance.id}, queue='csv_example')
 
-    @action(detail=True, methods=['GET'], name='Download dataset')
-    def download(self, request, *args, **kwargs):
-        instance: Dataset = self.get_object()
-        if instance.status == instance.Status.PROCESSING:
-            return Response(status=status.HTTP_406_NOT_ACCEPTABLE)
-        if os.path.exists(instance.result_file.path):
-            return services.download_dataset(instance)
-        return Response(status=status.HTTP_404_NOT_FOUND)
 
 

@@ -49,15 +49,15 @@ def generate_dataset(dataset: Dataset):
             data = get_fake_data(column, string_char)
             row.append(data)
         result += f"{column_separator}".join(row) + '\n'
-    content = ContentFile(result)
+    content = ContentFile(result.encode('ascii'))
     dataset.result_file.save(Dataset.result_file.field.upload_to(dataset, ""), content)
     dataset.status = Dataset.Status.READY
     dataset.save()
 
 
-def download_dataset(instance: Dataset):
-    file_path = instance.result_file.path
-    with open(file_path, 'rb') as fh:
-        response = HttpResponse(fh.read(), content_type="application/vnd.ms-excel")
-        response['Content-Disposition'] = 'inline; filename=' + os.path.basename(file_path)
-        return response
+# def download_dataset(instance: Dataset):
+#     file_path = instance.result_file.path
+#     with open(file_path, 'rb') as fh:
+#         response = HttpResponse(fh.read(), content_type="application/vnd.ms-excel")
+#         response['Content-Disposition'] = 'inline; filename=' + os.path.basename(file_path)
+#         return response

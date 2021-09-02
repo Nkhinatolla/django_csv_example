@@ -39,7 +39,11 @@ class DatasetListSerializer(serializers.ModelSerializer):
     rows = serializers.IntegerField(write_only=True)
     schema_id = serializers.IntegerField(write_only=True)
     status = serializers.CharField(read_only=True)
+    url = serializers.SerializerMethodField()
 
     class Meta:
         model = Dataset
-        fields = ('id', 'created', 'status', 'rows', 'schema_id')
+        fields = ('id', 'created', 'status', 'rows', 'schema_id', 'url')
+
+    def get_url(self, instance: Dataset):
+        return instance.result_file.url if instance.result_file else ""

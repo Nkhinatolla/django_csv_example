@@ -18,7 +18,7 @@ def get_full_name():
 
 
 def get_random_name(length=25):
-    return ''.join(random.choice(string.ascii_lowercase + string.digits) for _ in range(25))
+    return ''.join(random.choice(string.ascii_lowercase + string.digits) for _ in range(length))
 
 
 def dataset_upload(instance, filename):
