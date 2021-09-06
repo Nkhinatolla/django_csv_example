@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f2fc839-4782-4939-a0a5-60303736f2fc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/csv_example/storage_backends.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/csv_example/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/csv_example/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fakecsv/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/fakecsv/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fakecsv/services.py" beforeDir="false" afterPath="$PROJECT_DIR$/fakecsv/services.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fakecsv/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/fakecsv/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fakecsv/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/fakecsv/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fakecsv/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/fakecsv/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +28,18 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/requirements.txt" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/csv_example/storage_backends.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/fakecsv/services.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/csv_example/settings.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/fakecsv/views.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/.env" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Procfile" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/fakecsv/urls.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../1Fit/bin/envs/django_csv_example/lib/python3.8/site-packages/django/core/files/base.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/fakecsv/serializers.py" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1xBAuz06JGiJUGVddNBrpMK00rx" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -144,7 +148,7 @@
       <workItem from="1630541587768" duration="528000" />
       <workItem from="1630558751864" duration="3983000" />
       <workItem from="1630564425945" duration="3450000" />
-      <workItem from="1630569704675" duration="15478000" />
+      <workItem from="1630569704675" duration="19070000" />
     </task>
     <servers />
   </component>

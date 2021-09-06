@@ -1,7 +1,7 @@
 from django.db import models
 from model_utils.models import TimeStampedModel
 from django.utils.translation import gettext_lazy as _
-
+from django.core.validators import MaxValueValidator
 from fakecsv.utils import dataset_upload
 
 
@@ -87,7 +87,9 @@ class Dataset(TimeStampedModel):
         READY = "READY", _("Ready")
         PROCESSING = "PROCESSING", _("Processing")
 
-    rows = models.PositiveIntegerField()
+    rows = models.PositiveIntegerField(
+        validators=(MaxValueValidator(10000), )
+    )
 
     schema = models.ForeignKey(
         Schema,
