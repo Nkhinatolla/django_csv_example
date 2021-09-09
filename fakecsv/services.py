@@ -1,10 +1,8 @@
-import os
-
 from django.core.files.base import ContentFile
-from django.http import HttpResponse
 
 from fakecsv.models import Schema, Column, Dataset
-from fakecsv.utils import get_full_name, get_random_name, get_phone_number, get_integer
+from fakecsv.utils import (get_full_name, get_random_name, get_phone_number, get_integer,
+                           get_email, get_job, get_domain, get_company, get_text, get_address)
 
 
 def perform_columns_to_schema(schema: Schema, columns):
@@ -24,13 +22,23 @@ def perform_columns_to_schema(schema: Schema, columns):
     return Schema.objects.get(id=schema.id)
 
 
-def get_fake_data(column, string_char):
+def get_fake_data(column, string_char, column_separator):
     if column['type'] == Column.Type.FULL_NAME:
-        data = get_full_name()
+        data = get_full_name().replace(column_separator, "")
     elif column['type'] == Column.Type.EMAIL:
-        data = get_random_name(10) + "@" + get_random_name(3)
+        data = get_email().replace(column_separator, "")
+    elif column['type'] == Column.Type.JOB:
+        data = get_job().replace(column_separator, "")
+    elif column['type'] == Column.Type.DOMAIN_NAME:
+        data = get_domain().replace(column_separator, "")
+    elif column['type'] == Column.Type.COMPANY_NAME:
+        data = get_company().replace(column_separator, "")
+    elif column['type'] == Column.Type.ADDRESS:
+        data = get_address().replace(column_separator, "")
+    elif column['type'] == Column.Type.TEXT:
+        data = get_text().replace(column_separator, "")
     elif column['type'] == Column.Type.PHONE_NUMBER:
-        data = get_phone_number()
+        data = get_phone_number().replace(column_separator, "")
     elif column['type'] == Column.Type.INTEGER:
         data = get_integer(int(column['extra_data']['start_range']), int(column['extra_data']['end_range']))
         return data
@@ -46,7 +54,7 @@ def generate_dataset(dataset: Dataset):
     for row_id in range(dataset.rows):
         row = []
         for column in dataset.schema.column_set.values('type', 'extra_data'):
-            data = get_fake_data(column, string_char)
+            data = get_fake_data(column, string_char, column_separator)
             row.append(data)
         result += f"{column_separator}".join(row) + '\n'
     content = ContentFile(result.encode('ascii'))

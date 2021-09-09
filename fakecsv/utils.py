@@ -1,6 +1,8 @@
 import string
 import random
-import names
+from faker import Faker
+
+fake = Faker()
 
 
 def get_integer(start_range, end_range):
@@ -8,13 +10,35 @@ def get_integer(start_range, end_range):
 
 
 def get_phone_number(n=11):
-    start_range = 10 ** (n - 1)
-    end_range = (10 ** n) - 1
-    return f"+{random.randint(start_range, end_range)}"
+    return fake.phone_number()
 
 
 def get_full_name():
-    return names.get_full_name()
+    return fake.name()
+
+
+def get_email():
+    return fake.email()
+
+
+def get_job():
+    return fake.job()
+
+
+def get_domain():
+    return fake.domain_name()
+
+
+def get_company():
+    return fake.company()
+
+
+def get_text():
+    return fake.text()
+
+
+def get_address():
+    return fake.address()
 
 
 def get_random_name(length=25):
